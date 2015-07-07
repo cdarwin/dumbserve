@@ -9,14 +9,14 @@ You must have a working [Go build system](http://golang.org/doc/install) availab
 ## Installation
 
 ```shell
-go get github.com/cdarwin/dumbserve
-go intsall github.com/cdarwin/dumbserve
+luser@lolcathost:~$ go get github.com/cdarwin/dumbserve
+luser@lolcathost:~$ go intsall github.com/cdarwin/dumbserve
 ```
 
 ## Usage
 
 ```shell
-dumbserve -p 9090 -webroot /var/www -altroot /var/alt
+luser@lolcathost:~$ dumbserve -p 9090 -webroot /var/www -altroot /var/alt
 ```
 
 ## Webhook
