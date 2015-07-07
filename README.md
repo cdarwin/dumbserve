@@ -10,6 +10,7 @@ You must have a working [Go build system](http://golang.org/doc/install) availab
 
 ```shell
 go get github.com/cdarwin/dumbserve
+go intsall github.com/cdarwin/dumbserve
 ```
 
 ## Usage
