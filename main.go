@@ -5,14 +5,23 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"os/exec"
 )
 
 var (
-	webroot = flag.String("webroot", "/tmp", "absolute path to main directory of files to serve")
-	altroot = flag.String("altroot", "", "absolute path to alternate directory of files to serve")
-	port    = flag.String("port", "8080", "port to run server on")
+	webroot = flag.String("webroot", checkEnv("WEBROOT", "/tmp"), "absolute path to main directory of files to serve")
+	altroot = flag.String("altroot", checkEnv("ALTROOT", ""), "absolute path to alternate directory of files to serve")
+	port    = flag.String("port", checkEnv("PORT", "8080"), "port to run server on")
 )
+
+func checkEnv(env string, str string) string {
+	if len(os.Getenv(env)) > 0 {
+		return os.Getenv(env)
+	} else {
+		return str
+	}
+}
 
 func updateRoot(s string) interface{} {
 	str := "cd " + s + " && git pull origin master"
